@@ -32,17 +32,18 @@ Once the summaries and keywords were ready, I updated each document in MongoDB t
 
 6. Error Handling:
 
-Built-in error handling skips any problematic PDFs, so it doesn't stop the whole process.
+Built-in error handling skips any problematic PDFs
 Technology Used
+
 Python Libraries:
+-- PyPDF2 for pulling text from PDFs.
+-- NLTK for breaking down the text and handling stopwords.
+-- spaCy for finding important names and places with NER.
+-- Scikit-learn for TfidfVectorizer and cosine similarity.
+-- pymongo for saving and updating documents in MongoDB.
 
-PyPDF2 for pulling text from PDFs.
-NLTK for breaking down the text and handling stopwords.
-spaCy for finding important names and places with NER.
-Scikit-learn for TfidfVectorizer and cosine similarity.
-NetworkX for analyzing text rankings using TextRank.
-pymongo for saving and updating documents in MongoDB.
 Concurrency:
-
 Used ThreadPoolExecutor to process all PDFs at the same time, making things way faster.
-Database: MongoDB for storing and updating the extracted text, summaries, and keywords.
+
+Database:
+MongoDB for storing and updating the extracted text, summaries, and keywords.
